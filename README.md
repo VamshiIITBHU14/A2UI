@@ -1,3 +1,7 @@
+## License
+
+A2UI is licensed under the Apache License, Version 2.0.
+
 # A2UI Field Mini-Apps (iOS)  
 **Agent-to-UI for the Enterprise Edge**
 
