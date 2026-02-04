@@ -2,6 +2,8 @@
 
 A2UI is licensed under the Apache License, Version 2.0.
 
+
+
 # A2UI Field Mini-Apps (iOS)  
 **Agent-to-UI for the Enterprise Edge**
 
@@ -165,40 +167,6 @@ iOS provides:
 - Enterprise deployment paths
 
 This repo is iOS-first by design.
-
----
-
-## Why Open Source
-
-The **A2UI runtime** should be:
-- Auditable
-- Embeddable
-- Vendor-neutral
-- Trustworthy
-
-Open source:
-- Builds developer trust
-- Encourages vertical specialization
-- Standardizes the execution layer
-
----
-
-## Where Money Is Made
-
-Open source:
-- A2UI runtime
-- UI schema renderer
-- Validation engine
-
-Paid (enterprise):
-- Legacy system connectors (SAP / Oracle / Workday)
-- Industry-specific agents
-- Compliance rules
-- Audit trails
-- Deployment & governance tooling
-
-> The UI is free.  
-> **The translation into enterprise reality is the business.**
 
 ---
 
