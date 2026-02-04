@@ -264,3 +264,170 @@ This repo exists to prove **this is possible today**.
 
 If you’re reading this and nodding —  
 you already understand the opportunity.
+
+
+
+
+
+
+## 🚀 Getting Started: Add A2UI to Your iOS App
+
+A2UI is distributed as a **Swift Package** and can be embedded into any iOS app in minutes.  
+This section shows how to add A2UI, render a generated UI, and verify that everything works end-to-end.
+
+---
+
+### 1️⃣ Add A2UI via Swift Package Manager
+
+In **Xcode**:
+
+1. Open your iOS app project  
+2. Go to **File → Add Packages…**  
+3. Enter the repository URL:
+
+```
+https://github.com/VamshiIITBHU14/A2UI
+```
+
+4. Select **Up to Next Major Version**  
+5. Add the package to your **App target**
+
+Once added, import the runtime:
+
+```swift
+import A2UIRuntime
+```
+
+---
+
+### 2️⃣ Create the A2UI Engine
+
+Initialize the engine once (for example, in your main view or app coordinator):
+
+```swift
+let engine = A2UIEngine()
+```
+
+This engine is responsible for:
+- Inferring intent
+- Generating UI schemas
+- Executing tasks deterministically
+
+---
+
+### 3️⃣ Infer a Task from Natural Language
+
+Call the agent with real-world input:
+
+```swift
+let intent = try engine.inferTask(
+    input: "Broken pallet in aisle 4, leaking, urgent",
+    context: TaskContext(
+        userRole: "warehouse_worker",
+        locationHint: "Aisle 4"
+    )
+)
+```
+
+This returns:
+- A detected `taskType`
+- Extracted signals (location, urgency, etc.)
+- A **runtime-generated UI schema** (`UISchema`)
+
+No UI is predefined.
+
+---
+
+### 4️⃣ Render the Generated Mini-App (Native UI)
+
+Present the generated UI using SwiftUI:
+
+```swift
+NavigationLink {
+    DynamicRendererView(schema: intent.uiSchema) { values in
+        handleSubmit(values, intent)
+    }
+} label: {
+    Text("Open Generated Mini-App")
+}
+```
+
+The rendered UI is:
+- 100% native SwiftUI
+- Generated at runtime
+- Task-specific (no generic forms)
+- Human-in-the-loop by default
+
+---
+
+### 5️⃣ Execute the Task on Submit (Deterministic)
+
+When the user taps **Submit**, execute the task:
+
+```swift
+let result = try engine.execute(
+    taskType: intent.taskType,
+    schema: intent.uiSchema,
+    values: values,
+    context: context
+)
+```
+
+This step:
+- Validates required fields
+- Produces a structured payload
+- Generates a reference ID
+- Returns a deterministic execution result
+
+⚠️ No AI is used at execution time.
+
+---
+
+### 6️⃣ What to Expect When Testing (Verification Checklist)
+
+When running the demo app in Simulator or on device:
+
+1. Enter a real-world description (e.g. incident, note, update)
+2. Tap **Generate Mini-App**
+3. Review the inferred task and extracted signals
+4. Open the generated mini-app
+5. Fill in required fields
+6. Tap **Submit**
+7. You are automatically returned to the Home screen
+8. A success card appears showing:
+   - Execution status
+   - Reference ID
+   - JSON payload preview
+
+This confirms the full loop:
+
+```
+Intent → UI → Human → Validation → Record
+```
+
+---
+
+### 7️⃣ Where Is the Data Stored?
+
+In the demo app:
+- The validated payload is written to the app’s **Documents directory**
+- It is displayed back in the UI for inspection
+
+In production:
+- Replace the executor with:
+  - SAP / Oracle APIs
+  - Middleware services
+  - Message queues
+  - Offline sync pipelines
+
+A2UI is backend-agnostic by design.
+
+---
+
+## 🧠 Important Design Notes
+
+- This is **not** a form builder  
+- This is **not** chat UI  
+- This is **not** RPA  
+
+A2UI generates **ephemeral, task-specific native interfaces** that exist only long enough to safely capture human-confirmed data.
