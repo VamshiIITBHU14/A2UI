@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/1650891b-1ec3-4bc9-a7b3-b69bb9d57b3b
 # A2UI: Agent-to-UI Runtime for Mobile  
 **Human-in-the-loop execution for enterprise AI**
 
-> _What if enterprise software stopped forcing humans to learn UIs —  
+> _What if enterprise software stopped forcing humans to learn UIs -  
 and instead generated the right UI at the moment work happens?_
 
 > **A2UI is a runtime for generating native mobile interfaces at runtime from AI agents - with humans in the loop and deterministic execution.**
@@ -46,7 +46,7 @@ As a result:
 - Compliance relies on memory instead of systems  
 - Field teams actively avoid official software  
 
-> The real problem isn’t data capture —  
+> The real problem isn’t data capture -  
 > **it’s forcing humans to navigate software instead of describing reality.**
 
 ---
@@ -65,7 +65,7 @@ Instead of:
 > *“Find the right screen and fill the form”*
 
 We do:
-> *“Describe what happened — we’ll generate the right UI”*
+> *“Describe what happened - we’ll generate the right UI”*
 
 The UI becomes a **temporary artifact**, not a permanent product surface.
 
@@ -226,7 +226,7 @@ This repo is iOS-first by design.
 
 ## One-Sentence Pitch
 
-> **A2UI lets agents generate task-specific native mini-apps on demand, so frontline workers describe reality instead of navigating legacy software — while enterprises still get clean, validated records.**
+> **A2UI lets agents generate task-specific native mini-apps on demand, so frontline workers describe reality instead of navigating legacy software - while enterprises still get clean, validated records.**
 
 ---
 
