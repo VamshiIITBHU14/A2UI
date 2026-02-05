@@ -2,8 +2,6 @@
 
 A2UI is licensed under the Apache License, Version 2.0.
 
-https://github.com/user-attachments/assets/1650891b-1ec3-4bc9-a7b3-b69bb9d57b3b
-
 
 # A2UI: Agent-to-UI Runtime for Mobile  
 **Human-in-the-loop execution for enterprise AI**
@@ -89,11 +87,11 @@ This is **infrastructure**, not a vertical SaaS product.
 
 ---
 
-## 🎬 60-Second Demo
+## 🎬 30-Second Demo
 
 > Natural language → generated native UI → submit → validated enterprise record
 
-⬇️ *(Demo video goes here)*
+https://github.com/user-attachments/assets/1650891b-1ec3-4bc9-a7b3-b69bb9d57b3b
 
 ---
 
